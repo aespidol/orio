@@ -1,0 +1,50 @@
+doctype html
+html(ng-app="orio")
+	head 
+	title Workout
+	//- //////////////////////////
+	//- Stylesheet
+	//- //////////////////////////	
+	link(rel="stylesheet" type="text/css" href="bower_components/skeleton/css/skeleton.css")
+	link(rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.css")
+	link(rel="stylesheet" type="text/css" href="assets/css/style.min.css")
+	link(rel="stylesheet" type="text/css" href="bower_components/angular-chart.js/dist/angular-chart.css")
+
+	//- //////////////////////////
+	//- Angular Components
+	//- //////////////////////////	
+	script(type="text/javascript", src="bower_components/angular/angular.js")
+	script(type="text/javascript", src="bower_components/angular-route/angular-route.js")
+	script(type="text/javascript", src="bower_components/angular-socket-io/socket.js")
+	script(type="text/javascript", src="bower_components/Chart.js/Chart.js")
+	script(type="text/javascript", src="bower_components/angular-chart.js/dist/angular-chart.js")
+
+	//- //////////////////////////
+	//- JavaScript Components
+	//- //////////////////////////	
+	script(type="text/javascript", src="assets/js/main.js")
+	script(type="text/javascript", src="assets/js/factories/orio.js")
+	script(type="text/javascript", src="assets/js/controllers/orios.js")
+	script(type="text/javascript", src="bower_components/jquery/dist/jquery.js")
+	script(type="text/javascript", src="/socket.io/socket.io.js")
+
+	body
+		header
+			.row
+				.container
+					.four.columns
+						.right-nav.text-left.inline
+							//- ul
+							//- 	li Lorem
+							//- 	li Ipsum
+							//- 	li Sdolo
+							//- 	li About
+					.four.columns
+						.logo.text-center
+							h2 ORIO
+					.four.columns
+						.left-nav.text-right.inline
+							//- ul
+							//- 	li Sign Up
+							//- 	li Login
+		#view(ng-view)

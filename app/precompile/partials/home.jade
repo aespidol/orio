@@ -1,0 +1,94 @@
+#controller(ng-controller="orioController as oc")
+	section#index
+		
+		.container
+			.main
+				h1 Group Your <br> Friends Into Zodiac Signs
+				form
+					input.calInput(type="text" ng-model="oc.link" placeholder="Facebook WebCal Link" style="width= 435")
+					button.button-primary.margin-left(ng-click="oc.getCalendar()") Get Calendar 
+					button.button-primary.margin-left Instructions
+
+	section#chart
+			.container
+
+				canvas#bar.chart.chart-bar(chart-data="oc.data" chart-labels="oc.labels" chart-series="oc.series")
+				.row
+					six.columns
+						canvas#doughnut.chart.chart-doughnut(chart-data="oc.doughnut" chart-labels="oc.labels" chart-legend="true")
+					six.columns
+						canvas#radar.chart.chart-radar(chart-data="oc.data" chart-labels="oc.labels")
+
+				.row
+					six.columns
+						canvas#polar-area.chart.chart-polar-area(chart-data="oc.doughnut" chart-labels="oc.labels" chart-legend="true")
+					six.columns
+						canvas#pie.chart.chart-pie(chart-data="oc.doughnut" chart-labels="oc.labels" chart-legend="true")
+
+				.row.text-center
+					three.columns
+						h1(ng-if="oc.capricorn") Capricorn
+						.box(ng-if="oc.capricorn")
+							p(ng-repeat="capricorn in oc.capricorn | orderBy: 'name'") {{capricorn.name}}	
+						p(ng-if="oc.capricorn") {{oc.capricorn.length}} Capricorn Friends
+
+					three.columns
+						h1(ng-if="oc.aquarius") Aquarius
+						.box(ng-if="oc.aquarius")
+							p(ng-repeat="aquarius in oc.aquarius | orderBy: 'name'") {{aquarius.name}}	
+						p(ng-if="oc.aquarius") {{oc.aquarius.length}} Aquarius Friends
+
+					three.columns
+						h1(ng-if="oc.pisces") Pisces
+						.box(ng-if="oc.pisces")
+							p(ng-repeat="pisces in oc.pisces | orderBy: 'name'") {{pisces.name}}
+						p(ng-if="oc.pisces") {{oc.pisces.length}} Pisces Friends
+
+					three.columns
+						h1(ng-if="oc.aries") Aries
+						.box(ng-if="oc.aries")
+							p(ng-repeat="aries in oc.aries | orderBy: 'name'") {{aries.name}}
+						p(ng-if="oc.aries") {{oc.aries.length}} Aries Friends
+				.row.text-center
+					three.columns
+						h1(ng-if="oc.taurus") Taurus
+						.box(ng-if="oc.taurus")
+							p(ng-repeat="taurus in oc.taurus | orderBy: 'name'") {{taurus.name}}	
+						p(ng-if="oc.taurus") {{oc.taurus.length}} Taurus Friends
+					three.columns
+						h1(ng-if="oc.gemini") Gemini
+						.box(ng-if="oc.gemini")
+							p(ng-repeat="gemini in oc.gemini | orderBy: 'name'") {{gemini.name}}
+						p(ng-if="oc.gemini") {{oc.gemini.length}} Gemini Friends	
+					three.columns
+						h1(ng-if="oc.cancer") Cancer
+						.box(ng-if="oc.cancer")
+							p(ng-repeat="cancer in oc.cancer | orderBy: 'name'") {{cancer.name}}
+						.p(ng-if="oc.cancer") {{oc.cancer.length}} Cancer Friends
+
+					three.columns
+						h1(ng-if="oc.leo") Leo
+						.box(ng-if="oc.leo")
+							p(ng-repeat="leo in oc.leo | orderBy: 'name'") {{leo.name}}
+						p(ng-if="oc.leo") {{oc.leo.length}} Leo Friends	
+				.row.text-center
+					three.columns
+						h1(ng-if="oc.virgo") Virgo
+						.box(ng-if="oc.virgo")
+							p(ng-repeat="virgo in oc.virgo | orderBy: 'name'") {{virgo.name}}
+						p(ng-if="oc.virgo") {{oc.virgo.length}} Virgo Friends	
+					three.columns
+						h1(ng-if="oc.libra") Libra
+						.box(ng-if="oc.libra")
+							p(ng-repeat="libra in oc.libra | orderBy: 'name'") {{libra.name}}
+						p(ng-if="oc.libra") {{oc.libra.length}} Libra Friends		
+					three.columns
+						h1(ng-if="oc.scorpio") Scorpio
+						.box(ng-if="oc.scorpio")
+							p(ng-repeat="scorpio in oc.scorpio | orderBy: 'name'") {{scorpio.name}}
+						p(ng-if="oc.scorpio") {{oc.scorpio.length}} Scorpio Friends
+					three.columns
+						h1(ng-if="oc.sagittarius") Sagittarius
+						.box(ng-if="oc.sagittarius")
+							p(ng-repeat="sagittarius in oc.sagittarius | orderBy: 'name'") {{sagittarius.name}}
+						p(ng-if="oc.sagittarius") {{oc.sagittarius.length}} Saggittarius Friends
